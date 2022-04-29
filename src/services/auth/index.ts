@@ -1,6 +1,4 @@
-// import axios from "axios";
 import { post } from "../conf";
-// import { get, post, put, destroy } from "../conf";
 
 type User =
   | {
@@ -25,21 +23,4 @@ const mailer = (id: number) => {
   return post("/auth/mailer");
 };
 
-// const index = () => {
-//   return get("/users");
-// };
-// const single = (id: number) => {
-//   return get(`/users/${id}`);
-// };
-// const create = (params: User) => {
-//   return post(`/users`, params);
-// };
-// const update = (params: User) => {
-//   return put(`/users`, params);
-// };
-// const remove = (id: number) => {
-//   return destroy(`/users/${id}`);
-// };
-
-export const Users = { signIn, signUp, signOut, refreshToken, mailer };
-// export const Users = { index, single, create, update,remove };
+export const Auth = { signIn, signUp, signOut, refreshToken, mailer };
