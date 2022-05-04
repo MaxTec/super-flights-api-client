@@ -1,8 +1,14 @@
 import axios from "axios";
 const apiClient = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL, 
+  // Make Axios send cookies in its requests automatically
+  withCredentials: true,
+  baseURL: process.env.NEXT_PUBLIC_API_URL,
+  headers: {
+    "Access-Control-Allow-Origin": "*",
+    "Content-Type": "application/json",
+  },
 });
-// Solamnete si los necesitaremos para agregar la cookie
+// Solamente si los necesitaremos para agregar la cookie
 // apiClient.interceptors.request.use((config) => {
 //   return ({
 //     ...config,
