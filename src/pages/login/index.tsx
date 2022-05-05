@@ -21,10 +21,10 @@ const Login: NextPage = () => {
             const hashPassword = sha256(values.password).toString();
             const data = { ...values, password: hashPassword };
             const req = await Auth.signIn(data);
-            console.log(req.data)
-          } catch (error) {
+            console.log(req.data);
+          } catch (error: any) {
             console.error(error);
-            alert(error.message);
+            alert(error?.message);
           }
           // message.info(JSON.stringify(values, null, 4));
           // actions.setSubmitting(false);
